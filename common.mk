@@ -96,7 +96,8 @@ PRODUCT_COPY_FILES += \
 
 # VR permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml \
+    frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:system/etc/permissions/android.hardware.vr.headtracking-0.xml
 
 # Device was launched with N
 PRODUCT_PROPERTY_OVERRIDES += \
