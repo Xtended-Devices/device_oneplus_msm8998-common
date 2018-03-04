@@ -105,6 +105,6 @@
 
     <!-- Dashboard -->
     <string name="parts_dashboard_settings_title">Advanced device settings</string>
-    <string name="parts_dashboard_settings_summary">Suprise box</string>
+    <string name="parts_dashboard_settings_summary">Treasure box</string>
 
 </resources>
