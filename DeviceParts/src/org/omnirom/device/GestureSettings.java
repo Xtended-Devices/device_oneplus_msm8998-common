@@ -100,6 +100,7 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mFPLongPressApp;
     private PreferenceCategory fpGestures;
     private boolean mFpDownSwipe;
+    private static final boolean sIsdumpling = android.os.Build.DEVICE.equals("dumpling");
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -173,8 +174,7 @@ public class GestureSettings extends PreferenceFragment implements
         mRightSwipeApp.setValue(value);
         mRightSwipeApp.setOnPreferenceChangeListener(this);
 
-        if (android.os.Build.DEVICE.equals("dumpling")) {
-
+        if (sIsdumpling) {
             mFPDownSwipeApp = (AppSelectListPreference) findPreference(FP_GESTURE_SWIPE_DOWN_APP);
             mFPDownSwipeApp.setEnabled(!areSystemNavigationKeysEnabled());
             value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_10);
