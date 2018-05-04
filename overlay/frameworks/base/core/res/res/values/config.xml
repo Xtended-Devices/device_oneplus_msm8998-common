@@ -434,4 +434,5 @@
     <!-- Device supports Sustained Performance Mode-->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
+    <bool name="config_proxiSensorWakupCheck">true</bool>
 </resources>
