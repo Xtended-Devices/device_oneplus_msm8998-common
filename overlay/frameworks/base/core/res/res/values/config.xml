@@ -400,4 +400,16 @@
 
     <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
     <bool name="config_dynamic_bind_ims">true</bool>
+
+    <!-- Cardinal-AOSP shits -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+    <integer name="config_proximityCheckTimeout">100</integer>
+    <bool name="config_proximityCheckOnFingerprintWake">true</bool>
+    <bool name="config_intrusiveBatteryLed">true</bool>
+    <bool name="config_multiColorBatteryLed">true</bool>
+    <bool name="config_hasDashCharger">true</bool>
+    <bool name="config_multiColorNotificationLed">true</bool>
+    <bool name="config_enableBurnInProtection">true</bool>
+
 </resources>

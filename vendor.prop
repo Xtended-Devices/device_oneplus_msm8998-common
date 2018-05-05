@@ -197,3 +197,9 @@ sys.usb.rmnet.func.name=gsi
 
 # Wi-Fi
 wifi.interface=wlan0
+
+# Maintainer
+ro.cardinal.maintainer=Sathish K
+
+# vendor patch
+ro.vendor.patch.level=OxygenOS_5.1.1
