@@ -36,6 +36,10 @@ on boot
     chown system system /proc/tri-state-key/keyCode_bottom
     chmod 0660 /proc/tri-state-key/keyCode_bottom
 
+    # Pocket judge sysfs permissions
+    chown system system /sys/kernel/pocket_judge/inpocket
+    chmod 0664 /sys/kernel/pocket_judge/inpocket
+
 service vendor.wifi-mac-generator /vendor/bin/wifi-mac-generator
     class main
     user wifi
