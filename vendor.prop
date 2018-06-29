@@ -227,9 +227,6 @@ persist.radio.calls.on.ims=1
 # Wi-Fi
 wifi.interface=wlan0
 
-# Maintainer
-ro.cardinal.maintainer=Sathish K
-
 # vendor patch
 ro.vendor.patch.level=OxygenOS_5.1.4
 
@@ -242,3 +239,5 @@ persist.dbg.volte_avail_ovr=1
 persist.radio.calls.on.ims=1
 persist.dbg.wfc_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
+# AoD
+persist.debug.force_burn_in=true
