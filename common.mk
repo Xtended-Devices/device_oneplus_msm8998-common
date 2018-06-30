@@ -89,6 +89,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=25
 
+PRODUCT_GENERIC_PROPERTIES += \
+    use.dts_eagle=true
+
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
