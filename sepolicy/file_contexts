@@ -61,4 +61,3 @@
 /sys/devices/virtual/graphics/fb0/srgb                          u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb0/dci_p3                        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb0/night_mode                    u:object_r:sysfs_graphics:s0
-/sys/devices/virtual/timed_output/vibrator/vtg_level            u:object_r:sysfs_vibrator:s0
