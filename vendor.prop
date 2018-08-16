@@ -203,7 +203,7 @@ wifi.interface=wlan0
 ro.cardinal.maintainer=Sathish K
 
 # vendor patch
-ro.vendor.patch.level=OxygenOS_5.1.2
+ro.vendor.patch.level=OxygenOS_5.1.4
 
 # OTG support
 persist.sys.oem.otg_support=true
