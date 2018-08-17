@@ -230,7 +230,6 @@ public class AppSelectListPreference extends CustomDialogPreference {
                 R.drawable.ic_wakeup, WAKE_ENTRY);
         mInstalledPackages.add(0, wakeItem);
 
-        if (sIsdumpling) {
             PackageItem volumeUpItem = new PackageItem(
                     getContext().getResources().getString(R.string.volume_up),
                     R.drawable.ic_settings_sound, VOLUME_UP_ENTRY);
@@ -241,6 +240,7 @@ public class AppSelectListPreference extends CustomDialogPreference {
                     R.drawable.ic_settings_sound, VOLUME_DOWN_ENTRY);
             mInstalledPackages.add(0, volumeDownItem);
 
+          if (sIsdumpling) {
             PackageItem browseScrollDownItem = new PackageItem(
                     getContext().getResources().getString(R.string.browse_scroll_down),
                     R.drawable.arrow_collapse_down, BROWSE_SCROLL_DOWN_ENTRY);
