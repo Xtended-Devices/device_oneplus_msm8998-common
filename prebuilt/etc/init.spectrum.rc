@@ -3,7 +3,7 @@ on property:sys.boot_completed=1
     exec u:r:init:s0 root root -- /init.spectrum.sh
     exec u:r:su:s0 root root -- /init.spectrum.sh
     setprop spectrum.support 1
-    setprop persist.spectrum.kernel Singularity-V-1.0.16
+    setprop persist.spectrum.kernel -Mad-Xtended
 	write  /sys/module/msm_thermal/parameters/enabled Y
 	write  /sys/module/msm_thermal/core_control/enabled 1
 	write  /sys/module/msm_thermal/parameters/temp_threshold 50
