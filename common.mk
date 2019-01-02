@@ -362,6 +362,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/lib64/libstagefright.so:system/lib64/libstagefright.so  \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
+# OneplusShit
+PRODUCT_PACKAGES += \
+    OneplusShit 
+
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
@@ -505,6 +509,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
-# Inherit from oneplus-settings
-$(call inherit-product, device/oneplus/settings/common.mk)
