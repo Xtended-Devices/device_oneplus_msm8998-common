@@ -5,3 +5,7 @@ allow kernel oem_block_device:blk_file rw_file_perms;
 
 # Allow kernel to read and write to param_block_device
 allow kernel param_block_device:blk_file rw_file_perms;
+
+allow kernel kcal_dev:dir relabelto;
+allow kernel kcal_dev:file relabelto;
+allow kernel kcal_dev:lnk_file relabelto;
