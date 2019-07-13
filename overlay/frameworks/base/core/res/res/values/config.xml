@@ -637,4 +637,6 @@
       <!-- Set AOD off by default -->
       <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
+      <!-- Whether device has dash charging support -->
+      <bool name="config_hasDashCharger">true</bool>
 </resources>
