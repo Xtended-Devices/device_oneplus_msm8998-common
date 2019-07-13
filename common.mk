@@ -278,7 +278,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.oneplus_msm8998
+    libjni_livedisplay
 
 # Media
 PRODUCT_COPY_FILES += \
