@@ -88,34 +88,47 @@ on property:sys.boot_completed=1
     # configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1248000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "83 1804800:95"
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 19000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 95
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 20000 595200:60000 672000:20000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 30000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 595200
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 80000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 98 175000:52 672000:1 748800:81 883200:1 1036800:85 1248000:1 1824000:86
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 70000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 80000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 80000
 
     # online big cluster
     write /sys/devices/system/cpu/cpu4/online 1
     # configure governor settings for big cluster
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1574400
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "83 1939200:90 2016000:95"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 19000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 95
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 20000 441000:60000 576000:20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 576000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 80000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 98 422000:1 576000:80 729000:1 902000:82 979000:1 1267000:84 1824000:95
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/align_windows 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 80000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 300000
 
     # Core Control
     write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
