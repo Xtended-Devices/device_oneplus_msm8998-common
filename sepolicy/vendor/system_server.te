@@ -31,3 +31,6 @@ allow system_server sysfs_vibrator:dir { search };
 
 r_dir_file(system_server, sysfs_usb_supply);
 r_dir_file(system_server, sysfs_battery_supply);
+
+#Smart charge
+allow system_server sysfs_battery_supply:file rw_file_perms;
