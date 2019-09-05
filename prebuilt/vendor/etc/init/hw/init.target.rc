@@ -190,10 +190,6 @@ on property:wlan.driver.status=ok
     chmod 660 /proc/touchpanel/up_arrow_enable
     chmod 660 /proc/touchpanel/up_swipe_enable
 
-    # Vibrator permissions
-    chown root system /sys/devices/virtual/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
-
     # Graphics
     chown system graphics /sys/class/graphics/fb0/dyn_pu
     chmod 0664 /sys/class/graphics/fb0/dyn_pu
