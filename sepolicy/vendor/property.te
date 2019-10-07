@@ -1,3 +1,7 @@
 type diag_prop, property_type;
 type wifi_active_prop, property_type;
 type power_prop, property_type;
+# Spectrum
+type spectrum_prop, property_type;
+# Dirac
+type dirac_prop, property_type;

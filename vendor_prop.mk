@@ -166,6 +166,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
+#Dirac
+    persist.audio.dirac.speaker=true
+
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=9

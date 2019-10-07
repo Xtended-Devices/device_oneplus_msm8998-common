@@ -14,3 +14,8 @@ vendor.powerhal.audio                  u:object_r:power_prop:s0
 vendor.powerhal.init                   u:object_r:power_prop:s0
 vendor.powerhal.rendering              u:object_r:power_prop:s0
 vendor.powerhal.state                  u:object_r:power_prop:s0
+
+# Spectrum
+persist.spectrum.profile               u:object_r:spectrum_prop:s0
+# Dirac
+persist.audio.dirac.                   u:object_r:dirac_prop:s0
