@@ -12,3 +12,7 @@ get_prop(system_app, vendor_camera_prop)
 
 # Allow system app to access ro.vendor.aware_available
 get_prop(system_app, vendor_default_prop)
+
+#OPShit
+allow system_app sysfs:file write;
+allow system_app sysfs_switch:dir search;

@@ -7,3 +7,5 @@ binder_call(hal_audio_default, hal_param_default)
 
 # Allow hal_audio_default to find hal_param_hwservice
 allow hal_audio_default hal_param_hwservice:hwservice_manager find;
+get_prop(hal_audio_default, dirac_prop)
+set_prop(hal_audio_default, dirac_prop)
