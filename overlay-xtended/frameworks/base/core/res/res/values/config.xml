@@ -38,4 +38,7 @@
          pulsating and RGB control would set this config to 107. -->
     <integer name="config_deviceLightCapabilities">107</integer>
 
+    <!-- Whether the device supports Smart Pixels--> 
+    <bool name="config_enableSmartPixels">true</bool>
+
 </resources>
