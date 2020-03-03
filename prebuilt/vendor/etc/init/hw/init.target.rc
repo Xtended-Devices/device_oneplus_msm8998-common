@@ -192,6 +192,10 @@ on property:wlan.driver.status=ok
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
 
+    # FPS Info
+    chown system graphics /sys/class/graphics/fb0/measured_fps
+    chmod 0666 /sys/class/graphics/fb0/measured_fps
+
 #Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
