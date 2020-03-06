@@ -1,0 +1,20 @@
+[
+  {
+    "remote": "Xtended-Devices",
+    "repository": "kernel_oneplus_msm8998",
+    "target_path": "kernel/oneplus/msm8998",
+    "revision": "xq"
+  },
+  {
+    "remote": "Xtended-Devices",
+    "repository": "proprietary_vendor_oneplus",
+    "target_path": "vendor/oneplus",
+    "revision": "xq"
+  },
+  {
+    "remote": "Xtended-Devices",
+    "repository": "device_oneplus_OneplusShit",
+    "target_path": "device/oneplus/OneplusShit"
+    "revision": "xq5t"
+  }
+]
