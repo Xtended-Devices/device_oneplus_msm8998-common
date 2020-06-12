@@ -22,3 +22,5 @@ allow system_app proc_key_rep:file { rw_file_perms };
 #OPShit
 allow system_app sysfs:file write;
 allow system_app sysfs_switch:dir search;
+
+r_dir_file(system_app, sysfs_battery_supply)
