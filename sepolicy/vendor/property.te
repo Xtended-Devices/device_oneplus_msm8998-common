@@ -4,6 +4,4 @@ type vendor_camera_prop, property_type;
 type vendor_fp_prop, property_type;
 type vendor_nfc_prop, property_type;
 type wifi_active_prop, property_type;
-
-# Dirac
-type dirac_prop, property_type;
+type power_prop, property_type;
