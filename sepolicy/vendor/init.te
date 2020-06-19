@@ -8,7 +8,6 @@ allow init sysfs_data:file { r_file_perms };
 allow init sysfs_project_info:file { r_file_perms };
 
 allow init sysfs_fpc_proximity:file setattr;
-allow init sysfs_graphics_omni:file setattr;
 
 allow init vendor_file:file execute;
 allow init vendor_file:file execute_no_trans;
