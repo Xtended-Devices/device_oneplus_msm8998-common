@@ -17,9 +17,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <bool name="config_gesture_settings_enabled">true</bool>
 
-    <!-- Device specific doze package -->    
-    <string name="config_customDozePackage">com.custom.ambient.display/com.custom.ambient.display.DozeSettings</string>
-
     <!-- Battery Health -->
     <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full</string>
     <string name="config_batCurCap">/sys/class/power_supply/bms/charge_now_raw</string>
