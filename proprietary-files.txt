@@ -56,7 +56,7 @@ vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
 # IPA
-vendor/etc/init/ipacm.rc
+vendor/bin/ipacm-diag
 vendor/etc/init/ipa_fws.rc
 vendor/firmware/ipa_fws.b00
 vendor/firmware/ipa_fws.b01

@@ -64,6 +64,8 @@ on init
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
+    start vendor.ipacm
+    start vendor.ipacm-diag
 
     # Vibrator
     chown system system /sys/class/timed_output/vibrator/vtg_default
