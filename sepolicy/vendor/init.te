@@ -11,3 +11,7 @@ allow init sysfs_fpc_proximity:file setattr;
 
 allow init vendor_file:file execute;
 allow init vendor_file:file execute_no_trans;
+
+allow init bt_firmware_file:filesystem getattr;
+allow init firmware_file:filesystem getattr;
+
