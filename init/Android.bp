@@ -18,6 +18,7 @@ cc_library_static {
     name: "libinit_oneplus_msm8998",
     recovery_available: true,
     srcs: ["init_oneplus_msm8998.cpp"],
+    whole_static_libs: ["libbase"],
     include_dirs: [
         "system/core/init"
     ],
