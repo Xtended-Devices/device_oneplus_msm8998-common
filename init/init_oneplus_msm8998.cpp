@@ -52,16 +52,23 @@
 using android::base::Trim;
 using android::base::GetProperty;
 using android::base::ReadFileToString;
+using android::base::SetProperty;
 
-void property_override(char const prop[], char const value[])
+void property_override(const std::string& name, const std::string& value)
 {
-    prop_info *pi;
+    size_t valuelen = value.size();
 
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else
-        __system_property_add(prop, strlen(prop), value, strlen(value));
+    prop_info* pi = (prop_info*) __system_property_find(name.c_str());
+    if (pi != nullptr) {
+        __system_property_update(pi, value.c_str(), valuelen);
+    }
+    else {
+        int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
+        if (rc < 0) {
+            LOG(ERROR) << "SetProperty(\"" << name << "\", \"" << value << "\") failed: "
+                       << "__system_property_add failed";
+        }
+    }
 }
 
 void init_target_properties()
@@ -74,23 +81,23 @@ void init_target_properties()
 
         if (!strncmp(device.c_str(), "16859", 5)) {
             // Oneplus 5
-            property_override("ro.display.series", "OnePlus 5");
+            SetProperty("ro.display.series", "OnePlus 5");
             unknownDevice = false;
         }
         else if (!strncmp(device.c_str(), "17801", 5)) {
             // Oneplus 5T
-            property_override("ro.display.series", "OnePlus 5T");
+            SetProperty("ro.display.series", "OnePlus 5T");
             unknownDevice = false;
         }
 
-        property_override("vendor.boot.project_name", device.c_str());
+        SetProperty("vendor.boot.project_name", device.c_str());
     }
     else {
         LOG(ERROR) << "Unable to read device info from " << DEVINFO_FILE;
     }
 
     if (unknownDevice) {
-        property_override("ro.display.series", "UNKNOWN");
+        SetProperty("ro.display.series", "UNKNOWN");
     }
 }
 
@@ -101,10 +108,10 @@ void init_fingerprint_properties()
     if (ReadFileToString(SENSOR_VERSION_FILE, &sensor_version)) {
         LOG(INFO) << "Loading Fingerprint HAL for sensor version " << sensor_version;
         if (Trim(sensor_version) == "1" || Trim(sensor_version) == "2") {
-            property_override("ro.hardware.fingerprint", "fpc");
+            SetProperty("ro.hardware.fingerprint", "fpc");
         }
         else if (Trim(sensor_version) == "3") {
-            property_override("ro.hardware.fingerprint", "goodix");
+            SetProperty("ro.hardware.fingerprint", "goodix");
         }
         else {
             LOG(ERROR) << "Unsupported fingerprint sensor: " << sensor_version;
@@ -115,8 +122,73 @@ void init_fingerprint_properties()
     }
 }
 
+void init_alarm_boot_properties()
+{
+    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
+    std::string boot_reason;
+
+    if (ReadFileToString(boot_reason_file, &boot_reason)) {
+        /*
+         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+         * For existing PMIC chips, the following mapping applies
+         * for the value of boot_reason:
+         *
+         * 0 -> unknown
+         * 1 -> hard reset
+         * 2 -> sudden momentary power loss (SMPL)
+         * 3 -> real time clock (RTC)
+         * 4 -> DC charger inserted
+         * 5 -> USB charger inserted
+         * 6 -> PON1 pin toggled (for secondary PMICs)
+         * 7 -> CBLPWR_N pin toggled (for external power supply)
+         * 8 -> KPDPWR_N pin toggled (power key pressed)
+         */
+        if (Trim(boot_reason) == "0") {
+            SetProperty("ro.boot.bootreason", "invalid");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "1") {
+            SetProperty("ro.boot.bootreason", "hard_reset");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "2") {
+            SetProperty("ro.boot.bootreason", "smpl");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "3") {
+            SetProperty("ro.alarm_boot", "true");
+            // disable boot animation for RTC wakeup
+            SetProperty("debug.sf.nobootanimation", "1");
+        }
+        else if (Trim(boot_reason) == "4") {
+            SetProperty("ro.boot.bootreason", "dc_chg");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "5") {
+            SetProperty("ro.boot.bootreason", "usb_chg");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "6") {
+            SetProperty("ro.boot.bootreason", "pon1");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "7") {
+            SetProperty("ro.boot.bootreason", "cblpwr");
+            SetProperty("ro.alarm_boot", "false");
+        }
+        else if (Trim(boot_reason) == "8") {
+            SetProperty("ro.boot.bootreason", "kpdpwr");
+            SetProperty("ro.alarm_boot", "false");
+        }
+    }
+    else {
+        LOG(ERROR) << "Unable to read bootreason from " << boot_reason_file;
+    }
+}
+
 void vendor_load_properties() {
     LOG(INFO) << "Loading vendor specific properties";
     init_target_properties();
     init_fingerprint_properties();
+    init_alarm_boot_properties();
 }
