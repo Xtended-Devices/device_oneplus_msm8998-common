@@ -4,3 +4,6 @@ persist.bluetooth.bqr.min_interval_ms=500
 persist.vendor.bt.a2dp.aac_whitelist=false
 vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
+
+# Blur
+ro.surface_flinger.supports_background_blur=1
