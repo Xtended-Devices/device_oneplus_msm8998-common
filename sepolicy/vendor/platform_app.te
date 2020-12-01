@@ -5,3 +5,6 @@ binder_call(platform_app, hal_ifaa_default)
 get_prop(platform_app, vendor_camera_prop)
 
 allow platform_app sysfs_battery_supply:dir search;
+
+allow platform_app sysfs_fps:file { getattr open read };
+allow platform_app sysfs_graphics:dir search;
