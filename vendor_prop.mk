@@ -122,9 +122,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.soc=cherokee \
     ro.bluetooth.a2dp_offload.supported=true \
     ro.vendor.bluetooth.wipower=false \
-    vendor.hw.fm.init=0
+    vendor.hw.fm.init=0 \
+    vendor.qcom.bluetooth.soc=cherokee
 
 # Cabl
 PRODUCT_PROPERTY_OVERRIDES += \
