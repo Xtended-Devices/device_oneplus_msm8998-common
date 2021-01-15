@@ -208,6 +208,8 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libhwc2on1adapter \
     libqdMetaData \
+    libqdMetaData.system \
+    libqdMetaData.vendor \
     libtinyxml \
     libvulkan
 
@@ -535,6 +537,10 @@ PRODUCT_COPY_FILES += \
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \
+    libavservices_minijail \
+    libavservices_minijail.vendor \
+    libmediaextractorservice \
+    libminijail \
     libnl
 
 PRODUCT_BOOT_JARS += \
