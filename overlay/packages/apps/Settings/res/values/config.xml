@@ -24,4 +24,8 @@
        3 = right side
   -->
   <integer name="config_fingerprintSensorLocation">1</integer>
+  
+  <!-- Disable Battery health services as It's enable by default in our sources  -->
+  <bool name="config_supportBatteryHealth">false</bool>
+
 </resources>
