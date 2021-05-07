@@ -210,7 +210,7 @@ void init_alarm_boot_properties()
 void vendor_load_properties()
 {
     // fingerprint
-    property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint","ro.bootimage.build.fingerprint", "google/coral/coral:11/RQ2A.210405.005/7181113:user/release-keys");
+    property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint","ro.bootimage.build.fingerprint", "google/coral/coral:11/RQ2A.210505.002/7246365:user/release-keys");
     init_target_properties();
     init_fingerprint_properties();
     load_dalvikvm_properties();
