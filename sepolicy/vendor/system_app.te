@@ -1,8 +1,7 @@
 allow system_app proc_touchpanel:dir { search };
 allow system_app proc_touchpanel:file { rw_file_perms };
 
-allow system_app sysfs_switch:dir { search };
-allow system_app sysfs_switch:file { rw_file_perms };
+allow system_app sysfs_switch:file rw_file_perms;
 
 allow system_app sysfs_fpc:dir { r_dir_perms };
 allow system_app sysfs_fpc:file { rw_file_perms };
@@ -14,13 +13,13 @@ get_prop(system_app, vendor_camera_prop)
 get_prop(system_app, vendor_default_prop)
 
 #OPShit
-allow system_app sysfs:file write;
+allow system_app sysfs_dm:file rw_file_perms;
 allow system_app sysfs_switch:dir search;
 
 allow system_app kcal_dev:file rw_file_perms;
 allow system_app kcal_dev:dir search;
 
-allow system_app sysfs_graphics:file { rw_file_perms };
-allow system_app sysfs_graphics:dir { search };
-allow system_app sysfs_vibrator:file { rw_file_perms };
-allow system_app sysfs_vibrator:dir { search };
+allow system_app sysfs_graphics:file rw_file_perms;
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_vibrator:dir search;
