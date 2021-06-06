@@ -213,6 +213,8 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libhwc2on1adapter \
     libqdMetaData \
+    libqdMetaData.system \
+    libqdMetaData.vendor \
     libtinyxml \
     libvulkan
 
