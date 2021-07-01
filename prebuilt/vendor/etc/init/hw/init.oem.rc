@@ -16,18 +16,6 @@ on post-fs
     chown system system /dev/param
     chown system system /dev/block/mmcblk0p21
     chmod 660 /dev/block/mmcblk0p21
-    chown system system /sys/class/timed_output/vibrator/vmax_mv
-    chown system system /sys/class/timed_output/vibrator/wf_s0
-    chown system system /sys/class/timed_output/vibrator/wf_s1
-    chown system system /sys/class/timed_output/vibrator/wf_s2
-    chown system system /sys/class/timed_output/vibrator/wf_s3
-    chown system system /sys/class/timed_output/vibrator/wf_s4
-    chown system system /sys/class/timed_output/vibrator/wf_s5
-    chown system system /sys/class/timed_output/vibrator/wf_s6
-    chown system system /sys/class/timed_output/vibrator/wf_s7
-    chown system system /sys/class/timed_output/vibrator/wf_update
-    chown system system /sys/class/timed_output/vibrator/wf_rep
-    chown system system /sys/class/timed_output/vibrator/wf_s_rep
     chown system system /sys/devices/soc/c179000.i2c/i2c-5/5-0020/tp_grip_ctrl
     chown system log /sys/fs/pstore/console-ramoops-0
     chmod 0440 /sys/fs/pstore/console-ramoops-0
@@ -41,18 +29,9 @@ on post-fs
     chmod 660 /persist/sensors/registry/registry/tmd3725_platform.rgb.rfac_cal
     chown system system /persist/sensors/registry/registry/tmd3725_platform.als.afac_cal
     chmod 660 /persist/sensors/registry/registry/tmd3725_platform.als.afac_cal
-    chown system system /sys/class/leds/vibrator/vmax_mv
-    chmod 660 /sys/class/leds/vibrator/vmax_mv
 
     # wangdongdong@MultiMediaService,2018/03/28,change the mode of the file
     chmod 0664 /persist/spkr_calibration.bin
-    chown system system /sys/class/leds/vibrator/test_mode
-    chmod 660 /sys/class/leds/vibrator/test_mode
-    chown system system /sys/class/leds/vibrator/trigger
-    chown system system /sys/class/leds/vibrator/activate
-    chown system system /sys/class/leds/vibrator/brightness
-    chown system system /sys/class/leds/vibrator/duration
-    chown system system /sys/class/leds/vibrator/state
 
     # create a empty file for wifi hal to write mac address
     write /mnt/vendor/persist/wlan_mac.bin ""
