@@ -9,4 +9,9 @@ persist.vendor.btstack.connect.peer_earbud=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 
 # Blur
+ro.sf.blurs_are_expensive=1 
 ro.surface_flinger.supports_background_blur=1
+debug.sf.latch_unsignaled=0
+
+# GBoard Spacing
+ro.com.google.ime.kb_pad_port_b=1
