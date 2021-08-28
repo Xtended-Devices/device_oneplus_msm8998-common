@@ -28,4 +28,6 @@
   <!-- Disable Battery health services as It's enable by default in our sources  -->
   <bool name="config_supportBatteryHealth">false</bool>
 
+  <!-- Custom pickup sensor for doze customization -->
+  <string name="pickup_sensor" translatable="false">com.oneplus.sensor.pickup</string>
 </resources>
