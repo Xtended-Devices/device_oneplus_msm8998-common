@@ -22,4 +22,7 @@
 
   <!-- Custom pickup sensor for doze customization -->
   <string name="pickup_sensor" translatable="false">com.oneplus.sensor.pickup</string>
+  
+  <!-- Disable System Info -->
+  <bool name="enable_SystemInfo">false</bool>
 </resources>
