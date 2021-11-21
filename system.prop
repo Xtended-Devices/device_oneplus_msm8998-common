@@ -42,7 +42,9 @@ ro.oem_unlock_supported=1
 # RIL
 keyguard.no_require_sim=true
 persist.radio.multisim.config=dsds
+persist.sys.assert.panic=false
 persist.sys.fflag.override.settings_provider_model=false
+persist.sys.oem.region=OverSeas
 ril.subscription.types=NV,RUIM
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=22,20
