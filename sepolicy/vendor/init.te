@@ -7,4 +7,4 @@ allow init thermal_engine_prop:file { read write relabelto };
 allow init vendor_device_prop:file { read write relabelto };
 allow init vendor_param_prop:file { read write relabelto };
 allow init vendor_power_prop:file { read write relabelto };
-
+allow init sysfs_graphics:file rw_file_perms;
