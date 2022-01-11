@@ -830,7 +830,6 @@ vendor/lib64/libsmemlog.so|d9ce43b21abf453c58b892ecbfa42b98bc276bc7
 vendor/lib64/libsystem_health_mon.so|2cc55d78ea00b9fe8af9cd88fd8ef8c31ee5f494
 
 # Radio - from LA.UM.9.2.r1-03500-SDMxx0.0
--system_ext/app/datastatusnotification/datastatusnotification.apk|16a4c13080cd62e5a9722821058cd4d214c223a2
 -system_ext/app/embms/embms.apk|d984b4eeca3333c82550d1114998cb90f1f886d1
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|712ba653c60066e815b62cd54589e8511bcdb8f9
 system_ext/etc/permissions/embms.xml|22e7474091f9f71f02dd0cfc76cfa8848a46f079
