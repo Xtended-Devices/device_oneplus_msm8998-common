@@ -13,6 +13,13 @@
 /dev/dash                                                       u:object_r:dash_device:s0
 /dev/param                                                      u:object_r:param_device:s0
 
+# Display Mode
+/sys/devices/virtual/graphics/fb0/oneplus_mode                  u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/SRGB                          u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/DCI_P3                        u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/night_mode                    u:object_r:sysfs_dm:s0
+/sys/devices/virtual/graphics/fb0/panel_serial_number           u:object_r:sysfs_dm:s0
+
 # Fingerprint
 /sys/devices/soc/soc:fingerprint_detect/sensor_version          u:object_r:sysfs_fpc:s0
 /data/system/users/0/fpdata(/.*)?                               u:object_r:fingerprintd_data_file:s0
@@ -31,6 +38,10 @@
 # Init
 /(vendor|system/vendor)/bin/init\.devstart\.sh                  u:object_r:init-devstart-sh_exec:s0
 
+# Kcal
+/sys/devices/platform/kcal_ctrl.0(/.*)?                                       u:object_r:kcal_dev:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?                                     u:object_r:kcal_dev:s0
+
 # Power supply
 /sys/devices/soc/.*ssusb/power_supply/usb(/.*)?                 u:object_r:sysfs_usb_supply:s0
 /sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-02/800f000\.qcom,spmi:qcom,pmi8998@2:qcom,qpnp-smb2/power_supply/main(/.*)?       u:object_r:sysfs_usb_supply:s0
@@ -44,6 +55,9 @@
 
 # Root symlink
 /persist                                                        u:object_r:mnt_vendor_file:s0
+
+# Vibrator
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,haptics@c000/leds/vibrator(/.*)?           u:object_r:sysfs_vibrator:s0
 
 # Wifi
 /data/vendor/oemnvitems/4678_0                                  u:object_r:oem_nv_data_file:s0

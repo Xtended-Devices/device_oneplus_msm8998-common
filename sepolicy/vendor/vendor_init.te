@@ -4,3 +4,5 @@ allow vendor_init tmpfs:dir { create rw_dir_perms };
 allow vendor_init sysfs_wifi:file { w_file_perms };
 
 set_prop(vendor_init, vendor_power_prop)
+
+allow vendor_init proc_touchpanel:file { w_file_perms };
